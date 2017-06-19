@@ -55,71 +55,34 @@
 				yahoo.ro</a></p>
                 </br>
 
-                <!--<h3>Formular de contact</h3>-->
-
-			<!--<form class="form-horizontal" method="post" action="contact.php">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="Nume">Nume:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="Nume" placeholder="Numele dvs." name="Nume">
-                    </div>
+                <div class="alert alert-<?php echo $_GET['alert']; ?>">
+                    <h3> <?php echo $_GET['mes']; ?></h3>
                 </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="Email">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="Email" placeholder="E-mail" name="Email">
-                    </div>
-                </div>
-               <div class="form-group">
-                    <label class="control-label col-sm-2" for="Subiect">Subiect:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="Subiect" placeholder="Subiect" name="Subiect">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="Mesaj">Mesaj:</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" id="Mesaj" name="Mesaj"> </textarea>
-                    </div>
-                </div>
-                <div class="form-group">        
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Trimite</button>
-                    </div>
-                </div>
-            </form>-->
-                    <div class="alert alert-success">
-                        <strong>Am primit mesajul dvs!</strong> Va multumim.
-                    </div>
                     <form role="form" action="form-handler-nodb.php" method="POST">
                         <div class="row">
-                            <div class="form-group col-lg-4">
-                                <label>Nume</label>
-                                <input type="text" name="name" class="form-control" minlength="2" required>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>                               
+                                <input type="text" name="name" placeholder="Numele dvs." class="form-control"  minlength="2" required>
                             </div>
-                            <div class="form-group col-lg-4">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control" required>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="email" name="email" placeholder="adresa email" class="form-control"  required>
                             </div>
-                            <div class="form-group col-lg-4">
-                                <label>Telefon</label>
-                                <input type="tel" name="phone" class="form-control" minlength="2" required>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                <input type="tel" name="phone" placeholder="numar de telefon" class="form-control" minlength="10" >
                             </div>
                             <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                                <label>Mesaj</label>
-                                <textarea name="message" class="form-control" rows="6" minlength="5" required></textarea>
+                            <div class="form-group input-group">
+                                <span class="input-group-addon">Text</span>
+                                <textarea name="message" class="form-control" placeholder="mesajul dvs..." rows="6" minlength="5" required></textarea>
                             </div>
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Trimite</button>
+                            <div class="form-group">
+                                <!--<input type="hidden" name="save" value="contact">-->
+                                <button type="submit" class="btn btn-default form-control">Trimite mesajul</button>
                             </div>
                         </div>
                     </form>
-
-
-
-
         </div>
         <div class="col-md-6">
             <div class="map">
